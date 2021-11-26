@@ -107,39 +107,37 @@ const char *add_zero(int num)
 //output minutes of a countdown timer
 void	output_minutes(t_s *s, tm *ltm)
 {
-	int num;
+	int minutes = 0;
+	int amount_of_minutes_left_in_this_hour = 59 - ltm->tm_min;
 
 	if (s->minutes - ltm->tm_min == 1)
 		std::cout << "00:";
 	else if (s->hour == ltm->tm_hour)
 	{
-		num = s->minutes - ltm->tm_min - 1;
-		std::cout << add_zero(num) << num << ":";
+		minutes = s->minutes - ltm->tm_min - 1;
+		std::cout << add_zero(minutes) << minutes << ":";
 	}
-	else if (((59 - ltm->tm_min) + s->minutes) > 60)
+	else if ((amount_of_minutes_left_in_this_hour + s->minutes) > 60)
 	{
-		num = (59 - ltm->tm_min) - s->minutes;
-		std::cout << add_zero(num) << num << ":";
+		minutes = amount_of_minutes_left_in_this_hour + s->minutes - 60;
+		std::cout << add_zero(minutes) << minutes << ":";
 	}
 	else
 	{
-		num = (59 - ltm->tm_min) + s->minutes;
-		std::cout << add_zero(num) << num << ":";
+		minutes = amount_of_minutes_left_in_this_hour + s->minutes;
+		std::cout << add_zero(minutes) << minutes << ":";
 	}
 }
 
 //output seconds of a countdown timer
 void	output_seconds(tm *ltm)
 {
-	int num;
+	int amount_of_seconds_left_in_this_minute = 60 - ltm->tm_sec;
 
 	if (ltm->tm_sec == 0)
 		std::cout << "00   ";
 	else
-	{
-		num = 60 - ltm->tm_sec;
-		std::cout << add_zero(num) << num << "   ";
-	}
+		std::cout << add_zero(amount_of_seconds_left_in_this_minute) << amount_of_seconds_left_in_this_minute << "   ";
 }
 
 //output the current time

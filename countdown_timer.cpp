@@ -1,3 +1,8 @@
+//
+// Created by itonyluke@gmail.com on 25.11.21
+// contributions by fmalphit https://t.me/acalabash
+//
+
 #include <iostream>
 #include <unistd.h>
 #include <csignal>

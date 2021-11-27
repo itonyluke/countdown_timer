@@ -179,6 +179,7 @@ int main(void)
 {
 	t_s s;
 
+	system("clear");
 	signal(SIGINT, signalHandler);
 	initialize_variables(&s);
 	output_prompt();

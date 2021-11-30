@@ -1,14 +1,12 @@
 ### this program counts down the time to the specified deadline within a day
 
-#### install
-`git clone  countdown_timer`
+#### install:
+`git clone https://github.com/itonyluke/countdown_timer.git countdown_timer`
 
-compile: `clang++ main.cpp output_timer_and_time.cpp check_argument.cpp`
+#### build:
+`make`
 
-Usage:
-
-./a.out
-
+#### run:
+`./countdown`
 or
-
-./a.out <HH:MM>
+`./countdown <HH:MM>`

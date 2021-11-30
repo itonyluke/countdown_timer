@@ -13,9 +13,9 @@ void	output_prompt(void)
 	std::cout << GREY << START_END << DEFAULT << std::endl;
 	std::cout << "it is a countdown timer" << std::endl;
 	std::cout << "it is ";
-	std::cout << ltm->tm_hour << ":";
-	std::cout << ltm->tm_min << ":";
-	std::cout << ltm->tm_sec;
+	std::cout << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
+	std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
+	std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec;
 	std::cout << " now" << std::endl;
 	std::cout << "when is the deadline?" << std::endl;
 	std::cout << "enter the hour: __\b\b" << BOLD;
@@ -43,7 +43,7 @@ void	receive_input_and_handle_errors(t_s *s)
 	}
 	std::cout << DEFAULT << "enter the minutes: __\b\b" << BOLD;
 	std::cin >> s->minutes;
-	if (s->hour == ltm->tm_hour && s->minutes <= ltm->tm_min)
+	if (s->minutes >= 60 || (s->hour == ltm->tm_hour && s->minutes <= ltm->tm_min))
 	{
 		if (s->minutes < ltm->tm_min)
 			std::cout << RED << "deadline minute cannot be in the past" << DEFAULT << std::endl;

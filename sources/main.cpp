@@ -25,6 +25,7 @@ static void	initialize_variables(t_s *s)
 	s->seconds = 0;
 }
 
+//prompt how to run
 static void	prompt_correct_usage()
 {
 	std::cout << GREY << START_END << DEFAULT << std::endl;

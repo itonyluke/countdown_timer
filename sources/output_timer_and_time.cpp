@@ -17,7 +17,7 @@ void	output_hours(t_s *s, tm *ltm)
 }
 
 //add zeros where necessary
-const char *add_zero(int num)
+const char	*add_zero(int num)
 {
 	return (num < 10 ? "0" : "\0");
 }
@@ -25,8 +25,8 @@ const char *add_zero(int num)
 //output minutes of a countdown timer
 void	output_minutes(t_s *s, tm *ltm)
 {
-	int minutes = 0;
-	int amount_of_minutes_left_in_this_hour = 59 - ltm->tm_min;
+	int	minutes = 0;
+	int	amount_of_minutes_left_in_this_hour = 59 - ltm->tm_min;
 
 	if (s->minutes - ltm->tm_min == 1)
 		std::cout << "00:";
@@ -50,7 +50,7 @@ void	output_minutes(t_s *s, tm *ltm)
 //output seconds of a countdown timer
 void	output_seconds(tm *ltm)
 {
-	int amount_of_seconds_left_in_this_minute = 60 - ltm->tm_sec;
+	int	amount_of_seconds_left_in_this_minute = 60 - ltm->tm_sec;
 
 	if (ltm->tm_sec == 0)
 		std::cout << "00   ";
@@ -78,7 +78,7 @@ void	output_countdown_timer(t_s *s, tm *ltm)
 }
 
 //output the current time after the deadline is reached
-void output_current_time_after_deadline_occurred(void)
+void	output_current_time_after_deadline_occurred(void)
 {
 	while (1)
 	{

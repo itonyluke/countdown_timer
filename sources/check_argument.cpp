@@ -7,7 +7,7 @@
 //check the length of the argument
 bool	arg_length_is_fine(char **argv)
 {
-	size_t arg_length;
+	size_t	arg_length;
 
 	arg_length = strlen(argv[1]);
 	if (arg_length >= 3 && arg_length <= 5)
@@ -31,14 +31,14 @@ bool	argument_is_fine(char **argv)
 }
 
 //output prompt that input is wrong
-static void output_input_is_wrong(int i)
+static void	output_input_is_wrong(int i)
 {
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 
 	if (i == 1)
 		std::cout << RED << "deadline hour cannot be in the past" << DEFAULT << std::endl;
-	else if (i == 2)
+	else
 		std::cout << RED << "deadline minute cannot be in the past" << DEFAULT << std::endl;
 	std::cout << "current time: ";
 	std::cout << ltm->tm_hour << ":";

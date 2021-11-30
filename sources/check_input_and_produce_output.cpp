@@ -5,7 +5,7 @@
 #include "../include/countdown_timer.hpp"
 
 //output the prompt
-void output_prompt(void)
+void	output_prompt(void)
 {
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
@@ -22,7 +22,7 @@ void output_prompt(void)
 }
 
 //receive input and handle the errors
-void receive_input_and_handle_errors(t_s *s)
+void	receive_input_and_handle_errors(t_s *s)
 {
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
@@ -79,7 +79,7 @@ void	while_for_outputting_countdown_timer_and_current_time_on_the_same_line(t_s 
 }
 
 //convert string to check whether hours and minutes are in an appropriate range
-void check_hour_and_minutes(t_s *s, std::string &h, std::string &m)
+void	check_hour_and_minutes(t_s *s, std::string &h, std::string &m)
 {
 	s->hour = std::stoi(h);
 	check_hour_and_output_if_wrong(s);
@@ -88,9 +88,9 @@ void check_hour_and_minutes(t_s *s, std::string &h, std::string &m)
 }
 
 //the argument may come in four different cases (1:1, 11:1, 1:11, 11:11)
-void check_case(t_s *s, char **argv)
+void	check_case(t_s *s, char **argv)
 {
-	std::string argument = argv[1];
+	std::string	argument = argv[1];
 
 	if (strlen(argv[1]) == 3 && std::isdigit(argv[1][0]) && argv[1][1] == ':' && std::isdigit(argv[1][2]))
 	{

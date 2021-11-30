@@ -5,7 +5,7 @@
 #include "../include/countdown_timer.hpp"
 
 //handle signals
-static void signalHandler(int signum)
+static void	signalHandler(int signum)
 {
 	std::cout << "\b\b\n" << DEFAULT << std::flush;
 	std::cout << GREY << "Interrupt signal (" << signum << ") received." << DEFAULT << std::endl;
@@ -18,14 +18,14 @@ static void signalHandler(int signum)
 }
 
 //initialize variables
-static void initialize_variables(t_s *s)
+static void	initialize_variables(t_s *s)
 {
 	s->hour = 0;
 	s->minutes = 0;
 	s->seconds = 0;
 }
 
-static void prompt_correct_usage()
+static void	prompt_correct_usage()
 {
 	std::cout << GREY << START_END << DEFAULT << std::endl;
 	std::cout << GREY << "Usage: " << DEFAULT << std::endl
@@ -36,7 +36,7 @@ static void prompt_correct_usage()
 }
 
 //if (argc == 1)
-static void argc_equals_one(t_s *s, char **argv)
+static void	argc_equals_one(t_s *s, char **argv)
 {
 	(void) argv;
 	output_prompt();
@@ -52,7 +52,7 @@ static void argc_equals_one(t_s *s, char **argv)
 }
 
 //else if (argc == 2)
-static void argc_equals_two(t_s *s, char **argv)
+static void	argc_equals_two(t_s *s, char **argv)
 {
 	std::cout << GREY << START_END << DEFAULT << std::endl;
 	if (arg_length_is_fine(argv) && argument_is_fine(argv))
@@ -74,9 +74,9 @@ static void argc_equals_two(t_s *s, char **argv)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_s s;
+	t_s	s;
 
 	initialize_variables(&s);
 	system("clear");

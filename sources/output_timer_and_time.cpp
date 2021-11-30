@@ -1,8 +1,9 @@
 //
-// Created by Waves Anisha on 11/28/21.
+// Created by itonyluke@gmail.com on 28.11.21
+// contributions by fmalphit https://t.me/acalabash
 //
 
-#include "countdown_timer.hpp"
+#include "../include/countdown_timer.hpp"
 
 //output hours of a countdown timer
 void	output_hours(t_s *s, tm *ltm)

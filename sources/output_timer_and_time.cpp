@@ -61,9 +61,9 @@ void	output_seconds(tm *ltm)
 //output the current time
 void	output_current_time(tm *ltm)
 {
-	std::cout << GREY << "> "<< ltm->tm_hour << ":";
-	std::cout << ltm->tm_min << ":";
-	std::cout << ltm->tm_sec << "                                       " << DEFAULT;
+	std::cout << GREY << "> "<< add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
+	std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
+	std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec << "                                       " << DEFAULT;
 	std::cout << "\r" << std::flush;
 	sleep(1);
 }
@@ -85,9 +85,9 @@ void	output_current_time_after_deadline_occurred(void)
 		time_t now = time(0);
 		tm *ltm = localtime(&now);
 
-		std::cout << "> "<< ltm->tm_hour << ":";
-		std::cout << ltm->tm_min << ":";
-		std::cout << ltm->tm_sec;
+		std::cout << "> "<< add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
+		std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
+		std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec;
 		std::cout << "\r" << std::flush;
 		sleep(1);
 	}

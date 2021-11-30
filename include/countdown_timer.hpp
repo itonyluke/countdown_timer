@@ -13,7 +13,11 @@
 # define GREEN "\033[32m"
 
 # include <iostream>
+#ifdef _WIN32
+# include <Windows.h>
+# else
 # include <unistd.h>
+#endif
 # include <csignal>
 # include <cstring>
 

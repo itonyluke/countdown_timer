@@ -1,6 +1,9 @@
-counts down the time to the specified deadline within a day
+### this program counts down the time to the specified deadline within a day
 
-compile: clang++ main.cpp output_timer_and_time.cpp check_argument.cpp
+#### install
+`git clone  countdown_timer`
+
+compile: `clang++ main.cpp output_timer_and_time.cpp check_argument.cpp`
 
 Usage:
 

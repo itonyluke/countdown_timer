@@ -44,7 +44,8 @@ static void	output_input_is_wrong(int i)
 	std::cout << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
 	std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
 	std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec << std::endl;
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 	exit(EXIT_FAILURE);
 }
 

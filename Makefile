@@ -1,7 +1,8 @@
 SRCS						=	sources/main.cpp \
 								sources/check_input_and_produce_output.cpp \
 								sources/check_argument.cpp \
-								sources/output_timer_and_time.cpp
+								sources/output_timer_and_time.cpp \
+								sources/output_divider_line.cpp
 
 HEADERS						=	./include/*
 

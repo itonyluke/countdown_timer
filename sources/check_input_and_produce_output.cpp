@@ -10,7 +10,8 @@ void	output_prompt(void)
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 	std::cout << "it is a countdown timer" << std::endl;
 	std::cout << "it is ";
 	std::cout << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
@@ -38,7 +39,8 @@ void	receive_input_and_handle_errors(t_s *s)
 			std::cout << "deadline will come anyway" << std::endl;
 			std::cout << "you just waisted your life time" << DEFAULT << std::endl;
 		}
-		std::cout << GREY << START_END << DEFAULT << std::endl;
+		output_divider_line();
+//		std::cout << GREY << START_END << DEFAULT << std::endl;
 		exit(EXIT_FAILURE);
 	}
 	std::cout << DEFAULT << "enter the minutes: __\b\b" << BOLD;
@@ -53,7 +55,8 @@ void	receive_input_and_handle_errors(t_s *s)
 			std::cout << "deadline will come anyway" << std::endl;
 			std::cout << "you just waisted your life time" << DEFAULT << std::endl;
 		}
-		std::cout << GREY << START_END << DEFAULT << std::endl;
+		output_divider_line();
+//		std::cout << GREY << START_END << DEFAULT << std::endl;
 		exit(EXIT_FAILURE);
 	}
 	std::cout << DEFAULT;

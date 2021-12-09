@@ -9,6 +9,7 @@
 # define DEFAULT "\033[0m"
 # define START_END "************************************************************"
 # define GREY "\033[2m"
+# define DARK_GREY "\033[90m"
 # define RED "\033[31m"
 # define GREEN "\033[32m"
 
@@ -18,6 +19,8 @@
 # else
 # include <unistd.h>
 #endif
+# include <fcntl.h>
+# include <sys/ioctl.h>
 # include <csignal>
 # include <cstring>
 
@@ -28,6 +31,15 @@ typedef struct	s_s
 	int			minutes;
 	int			seconds;
 }				t_s;
+
+//structure to hold the terminal window size
+typedef struct s_w
+{
+	unsigned short	ws_rows;
+	unsigned short	ws_cols;
+	unsigned short	ws_xpixel;
+	unsigned short	ws_ypixel;
+}				t_w;
 
 void			output_hours(t_s *s, tm *ltm);
 const char		*add_zero(int num);
@@ -47,5 +59,7 @@ void			receive_input_and_handle_errors(t_s *s);
 void			while_for_outputting_countdown_timer_and_current_time_on_the_same_line(t_s *s);
 void			check_hour_and_minutes(t_s *s, std::string &h, std::string &m);
 void			check_case(t_s *s, char **argv);
+
+void			output_divider_line();
 
 #endif //COUNTDOWN_TIMER_HPP

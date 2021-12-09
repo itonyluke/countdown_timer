@@ -9,7 +9,8 @@ static void	signalHandler(int signum)
 {
 	std::cout << "\b\b\n" << DEFAULT << std::flush;
 	std::cout << GREY << "Interrupt signal (" << signum << ") received." << DEFAULT << std::endl;
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 
 	// cleanup and close up stuff here
 	// terminate program
@@ -28,12 +29,14 @@ static void	initialize_variables(t_s *s)
 //prompt how to run
 static void	prompt_correct_usage()
 {
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 	std::cout << GREY << "Usage: " << DEFAULT << std::endl
 			  << "./countdown" << std::endl
 			  << GREY << "or" << DEFAULT << std::endl
 			  << "./countdown <HH:MM>" << std::endl;
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 }
 
 //if (argc == 1)
@@ -58,7 +61,8 @@ static void	argc_equals_one(t_s *s, char **argv)
 	while_for_outputting_countdown_timer_and_current_time_on_the_same_line(s);
 	//output current time after deadline occurred;
 	output_current_time_after_deadline_occurred();
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 }
 
 //else if (argc == 2)
@@ -67,7 +71,8 @@ static void	argc_equals_two(t_s *s, char **argv)
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 
-	std::cout << GREY << START_END << DEFAULT << std::endl;
+	output_divider_line();
+//	std::cout << GREY << START_END << DEFAULT << std::endl;
 	if (arg_length_is_fine(argv) && argument_is_fine(argv))
 	{
 		check_case(s, argv);
@@ -84,7 +89,8 @@ static void	argc_equals_two(t_s *s, char **argv)
 		//output current time after deadline occurred;
 		output_current_time_after_deadline_occurred();
 		//output ********************* in GREY
-		std::cout << GREY << START_END << DEFAULT << std::endl;
+		output_divider_line();
+		//std::cout << GREY << START_END << DEFAULT << std::endl;
 	}
 	else
 	{

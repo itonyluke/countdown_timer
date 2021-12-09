@@ -3,7 +3,7 @@ SRCS						=	sources/main.cpp \
 								sources/check_argument.cpp \
 								sources/output_timer_and_time.cpp
 
-HEADERS						=	./include/
+HEADERS						=	./include/*
 
 OBJS						=	$(SRCS:.cpp=.o)
 
@@ -22,7 +22,7 @@ JIC_A_OUT					=	a.out
 
 all:							$(PROGRAM_NAME)
 
-$(PROGRAM_NAME):				$(OBJS)
+$(PROGRAM_NAME):				$(OBJS) $(HEADERS)
 								$(COMPILER) $(COMPILE_FLAGS) $(HEADERS) $(OBJS) -o $(PROGRAM_NAME)
 
 clean:

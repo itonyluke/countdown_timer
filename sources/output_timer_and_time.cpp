@@ -9,11 +9,11 @@
 void	output_hours(t_s *s, tm *ltm)
 {
 	if (s->hour == ltm->tm_hour)
-		std::cout << "> 00" << ":";
+		std::cout << GREY << "left\t>" << DEFAULT << " 00" << ":";
 	else if (s->minutes <= ltm->tm_min)
-		std::cout << "> "<< s->hour - ltm->tm_hour - 1<< ":";
+		std::cout << GREY << "left\t>" << DEFAULT << s->hour - ltm->tm_hour - 1<< ":";
 	else
-		std::cout << "> "<< s->hour - ltm->tm_hour << ":";
+		std::cout << GREY << "left\t>" << DEFAULT << s->hour - ltm->tm_hour << ":";
 }
 
 //add zeros where necessary
@@ -85,7 +85,7 @@ void	output_current_time_after_deadline_occurred(void)
 		time_t now = time(0);
 		tm *ltm = localtime(&now);
 
-		std::cout << "> "<< add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
+		std::cout << GREY << "current\t> " << DEFAULT << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
 		std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
 		std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec;
 		std::cout << "\r" << std::flush;

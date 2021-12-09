@@ -40,14 +40,22 @@ static void	prompt_correct_usage()
 static void	argc_equals_one(t_s *s, char **argv)
 {
 	(void) argv;
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+
 	output_prompt();
 	receive_input_and_handle_errors(s);
 
+	//output current time
+	std::cout << GREY << "start\t";
+	output_current_time(ltm);
+	std::cout << std::endl;
 	//output the time of the deadline
+	std::cout << GREY << "end\t";
 	std::cout << GREY << "> " << s->hour << ":" << add_zero(s->minutes) << s->minutes << ":00" << DEFAULT << std::endl;
 	//output the countdown timer and the current time on the same line
 	while_for_outputting_countdown_timer_and_current_time_on_the_same_line(s);
-	//		output current time after deadline occurred;
+	//output current time after deadline occurred;
 	output_current_time_after_deadline_occurred();
 	std::cout << GREY << START_END << DEFAULT << std::endl;
 }
@@ -55,11 +63,19 @@ static void	argc_equals_one(t_s *s, char **argv)
 //else if (argc == 2)
 static void	argc_equals_two(t_s *s, char **argv)
 {
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+
 	std::cout << GREY << START_END << DEFAULT << std::endl;
 	if (arg_length_is_fine(argv) && argument_is_fine(argv))
 	{
 		check_case(s, argv);
-		//			output the time of the deadline
+		//output current time
+		std::cout << GREY << "start\t";
+		output_current_time(ltm);
+		std::cout << std::endl;
+		//output the time of the deadline
+		std::cout << GREY << "end\t";
 		std::cout << GREY << "> " << s->hour << ":" << add_zero(s->minutes) << s->minutes << ":00" << DEFAULT << std::endl;
 		//output the countdown timer and the current time on the same line
 		while_for_outputting_countdown_timer_and_current_time_on_the_same_line(s);

@@ -11,4 +11,4 @@
 or
 `./countdown <HH:MM>`
 
-###### built and tested only on Darwin 18.7.0 x86_64 i386
+###### built and tested on Darwin 18.7.0 x86_64 i386

@@ -53,6 +53,7 @@ static void	argc_equals_one(t_s *s, char **argv)
 	//output the time of the deadline
 	std::cout << GREY << "end\t";
 	std::cout << GREY << "> " << s->hour << ":" << add_zero(s->minutes) << s->minutes << ":00" << DEFAULT << std::endl;
+	sleep(1);
 	//output the countdown timer and the current time on the same line
 	while_for_outputting_countdown_timer_and_current_time_on_the_same_line(s);
 	//output current time after deadline occurred;
@@ -77,6 +78,7 @@ static void	argc_equals_two(t_s *s, char **argv)
 		//output the time of the deadline
 		std::cout << GREY << "end\t";
 		std::cout << GREY << "> " << s->hour << ":" << add_zero(s->minutes) << s->minutes << ":00" << DEFAULT << std::endl;
+		sleep(1);
 		//output the countdown timer and the current time on the same line
 		while_for_outputting_countdown_timer_and_current_time_on_the_same_line(s);
 		//output current time after deadline occurred;

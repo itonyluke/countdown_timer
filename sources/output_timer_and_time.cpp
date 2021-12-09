@@ -94,9 +94,10 @@ void	output_current_time_after_deadline_occurred(void)
 		time_t now = time(0);
 		tm *ltm = localtime(&now);
 
-		std::cout << GREY << "current\t> " << DEFAULT << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
+		std::cout << GREY << "it is\t> " << DEFAULT << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
 		std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
 		std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec;
+		std::cout << GREY << " now";
 		std::cout << "\r" << std::flush;
 		sleep(1);
 	}

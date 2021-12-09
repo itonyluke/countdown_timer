@@ -41,10 +41,10 @@ static void	output_input_is_wrong(int i)
 		std::cout << RED << "deadline hour cannot be in the past" << DEFAULT << std::endl;
 	else
 		std::cout << RED << "deadline minute cannot be in the past" << DEFAULT << std::endl;
-	std::cout << "current time: ";
+	std::cout << "it is " << BOLD;
 	std::cout << add_zero(ltm->tm_hour) << ltm->tm_hour << ":";
 	std::cout << add_zero(ltm->tm_min) << ltm->tm_min << ":";
-	std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec << std::endl;
+	std::cout << add_zero(ltm->tm_sec) << ltm->tm_sec << DEFAULT << " now" << std::endl;
 	output_divider_line();
 //	std::cout << GREY << START_END << DEFAULT << std::endl;
 	exit(EXIT_FAILURE);

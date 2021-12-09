@@ -11,9 +11,9 @@ void	output_hours(t_s *s, tm *ltm)
 	if (s->hour == ltm->tm_hour)
 		std::cout << GREY << "left\t>" << DEFAULT << " 00" << ":";
 	else if (s->minutes <= ltm->tm_min)
-		std::cout << GREY << "left\t>" << DEFAULT << s->hour - ltm->tm_hour - 1<< ":";
+		std::cout << GREY << "left\t> " << DEFAULT << s->hour - ltm->tm_hour - 1<< ":";
 	else
-		std::cout << GREY << "left\t>" << DEFAULT << s->hour - ltm->tm_hour << ":";
+		std::cout << GREY << "left\t> " << DEFAULT << s->hour - ltm->tm_hour << ":";
 }
 
 //add zeros where necessary

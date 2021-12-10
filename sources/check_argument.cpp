@@ -1,6 +1,24 @@
+//Copyright 2021 Anton Pavlyukevich, Andrey Fomichev.
+
+//This file is part of a countdown_timer.
 //
-// Created by itonyluke@gmail.com on 27.11.21
+//Countdown_timer is free software: you can redistribute it and/or modify
+//		it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
 //
+//Countdown_timer is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with Countdown_timer.  If not, see <https://www.gnu.org/licenses/>.
+
+//
+// Created by pavlyukevich.anton@gmail.com on 27.11.21
+//
+
 // built and tested on Darwin Kernel Version 18.7.0: Tue Jun 22 19:37:08 PDT 2021; root:xnu-4903.278.70~1/RELEASE_X86_64 x86_64
 
 #include "../include/countdown_timer.hpp"

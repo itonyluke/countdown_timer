@@ -41,6 +41,7 @@
 # include <sys/ioctl.h>
 # include <csignal>
 # include <cstring>
+# include <cstdlib>
 
 //structure to hold the deadline time
 typedef struct	s_s

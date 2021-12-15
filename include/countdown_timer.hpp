@@ -2,18 +2,18 @@
 
 //This file is part of a countdown_timer.
 //
-//Countdown_timer is free software: you can redistribute it and/or modify
+//countdown_timer is free software: you can redistribute it and/or modify
 //		it under the terms of the GNU General Public License as published by
 //the Free Software Foundation, either version 3 of the License, or
 //(at your option) any later version.
 //
-//Countdown_timer is distributed in the hope that it will be useful,
+//countdown_timer is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
 //
 //You should have received a copy of the GNU General Public License
-//along with Countdown_timer.  If not, see <https://www.gnu.org/licenses/>.
+//along with countdown_timer.  If not, see <https://www.gnu.org/licenses/>.
 
 //
 // Created by pavlyukevich.anton@gmail.com on 28.11.21

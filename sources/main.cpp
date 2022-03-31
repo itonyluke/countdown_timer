@@ -59,7 +59,7 @@ static void	prompt_correct_usage()
 }
 
 //if (argc == 1)
-static void	argc_equals_one(t_s *s, char **argv)
+static void	argc_equals_one(t_e &e, t_s *s, char **argv)
 {
 	(void) argv;
 	time_t now = time(0);
@@ -67,6 +67,7 @@ static void	argc_equals_one(t_s *s, char **argv)
 
 	output_prompt();
 	receive_input_and_handle_errors(s);
+	init_shell(e);
 
 	//output current time
 	std::cout << GREY << "start\t";
@@ -85,7 +86,7 @@ static void	argc_equals_one(t_s *s, char **argv)
 }
 
 //else if (argc == 2)
-static void	argc_equals_two(t_s *s, char **argv)
+static void	argc_equals_two(t_e &e, t_s *s, char **argv)
 {
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
@@ -95,6 +96,7 @@ static void	argc_equals_two(t_s *s, char **argv)
 	if (arg_length_is_fine(argv) && argument_is_fine(argv))
 	{
 		check_case(s, argv);
+		init_shell(e);
 		//output current time
 		std::cout << GREY << "start\t";
 		output_current_time(ltm);
@@ -121,15 +123,17 @@ static void	argc_equals_two(t_s *s, char **argv)
 int	main(int argc, char **argv)
 {
 	t_s	s;
+	t_e e;
 
 	initialize_variables(&s);
 	system("clear");
 	signal(SIGINT, signalHandler);
 	if (argc == 1)
-		argc_equals_one(&s, argv);
+		argc_equals_one(e, &s, argv);
 	else if (argc == 2)
-		argc_equals_two(&s, argv);
+		argc_equals_two(e, &s, argv);
 	else
 		prompt_correct_usage();
 	return (0);
 }
+

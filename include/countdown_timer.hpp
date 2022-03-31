@@ -42,6 +42,9 @@
 # include <csignal>
 # include <cstring>
 # include <cstdlib>
+# include <termios.h>
+# include <curses.h>
+# include <term.h>
 
 //structure to hold the deadline time
 typedef struct	s_s
@@ -50,6 +53,16 @@ typedef struct	s_s
 	int			minutes;
 	int			seconds;
 }				t_s;
+
+typedef struct s_e
+{
+	int					term_fd;
+	struct termios		term;
+	struct termios		saved_term_attributes;
+	char				str[10000];
+	int					number_of_bytes_actually_read;
+	char				*term_name;
+}				t_e;
 
 //structure to hold the terminal window size
 typedef struct s_w
@@ -80,5 +93,6 @@ void			check_hour_and_minutes(t_s *s, std::string &h, std::string &m);
 void			check_case(t_s *s, char **argv);
 
 void			output_divider_line();
+void			init_shell(t_e &e);
 
 #endif //COUNTDOWN_TIMER_HPP

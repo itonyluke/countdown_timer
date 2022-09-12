@@ -2,7 +2,9 @@
 
 #### install:
 
-`git clone https://github.com/itonyluke/countdown_timer.git countdown_timer`
+```
+git clone https://github.com/itonyluke/countdown_timer.git countdown_timer
+```
 
 #### build:
 `make`
